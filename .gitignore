@@ -1,0 +1,26 @@
+# Dependencies and build artifacts
+node_modules/
+dist/
+coverage/
+
+# Local environment files. Keep .env.example in Git.
+.env
+.env.*
+!.env.example
+
+# Logs and local tool state
+*.log
+npm-debug.log*
+pnpm-debug.log*
+.DS_Store
+Thumbs.db
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# TypeScript build cache
+*.tsbuildinfo
+node_modules/.tmp/
+
+# Supabase local state
+supabase/.temp/

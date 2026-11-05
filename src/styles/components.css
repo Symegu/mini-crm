@@ -1,0 +1,668 @@
+/* Переиспользуемые элементы интерфейса: кнопки, таблицы, карточки, формы и модальные окна. */
+
+/* Фирменный знак и небольшие элементы навигации. */
+
+.brand-mark {
+	width: 46px;
+	height: 46px;
+	border-radius: 14px;
+	background: #e8f0f6;
+	color: #1c506e;
+	display: grid;
+	place-items: center;
+}
+
+.brand-mark svg {
+	width: 23px;
+	height: 23px;
+}
+
+.brand-mark.small {
+	width: 38px;
+	height: 38px;
+	border-radius: 11px;
+}
+
+.brand-mark.small svg {
+	width: 20px;
+}
+
+.nav-item.active {
+	box-shadow: inset 3px 0 #70b1d1;
+}
+
+/* Кнопки и элементы управления. */
+
+.icon-btn {
+	border: 1px solid #e5e9ed;
+	background: white;
+	border-radius: 8px;
+	width: 36px;
+	height: 36px;
+	display: grid;
+	place-items: center;
+	color: #667381;
+}
+
+.section-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 22px;
+}
+
+.section-title h2 {
+	font: 700 21px Manrope, sans-serif;
+	margin: 6px 0;
+	color: #253341;
+}
+
+.section-title p {
+	font-size: 12px;
+	margin: 4px 0;
+}
+
+.sub-count {
+	font: 500 12px 'DM Sans';
+	color: #7c8995;
+	background: #e9edf1;
+	border-radius: 20px;
+	padding: 4px 9px;
+	vertical-align: 3px;
+	margin-left: 5px;
+}
+
+.primary, .secondary, .warning-btn {
+	height: 38px;
+	border-radius: 7px;
+	padding: 0 14px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	font-size: 12px;
+	font-weight: 600;
+}
+
+.primary {
+	background: #245b78;
+	color: white;
+	border: 1px solid #245b78;
+}
+
+.primary:hover {
+	background: #194a65;
+}
+
+.primary:disabled {
+	opacity: .6;
+	cursor: wait;
+}
+
+.secondary {
+	background: white;
+	border: 1px solid #dce2e7;
+	color: #465463;
+}
+
+.secondary:hover {
+	background: #f7f9fa;
+}
+
+.warning-btn {
+	background: #fff5e7;
+	border: 1px solid #f1d6aa;
+	color: #9a641e;
+}
+
+.danger-ghost {
+	border: 1px solid #f0d9d9;
+	background: white;
+	color: #b14d4d;
+	border-radius: 7px;
+	padding: 0 12px;
+	height: 36px;
+	font-size: 12px;
+}
+
+/* Поиск и фильтрация списков. */
+
+.toolbar {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin: 0 0 18px;
+}
+
+.search-box {
+	width: min(390px, 100%);
+	height: 39px;
+	background: #fff;
+	border: 1px solid #e2e7eb;
+	border-radius: 7px;
+	display: flex;
+	align-items: center;
+	gap: 9px;
+	padding: 0 11px;
+	color: #84909c;
+}
+
+.search-box input {
+	border: 0;
+	outline: 0;
+	width: 100%;
+	font-size: 12px;
+	background: transparent;
+	color: #273441;
+}
+
+/* Карточки объектов. */
+
+.project-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(245px, 1fr));
+	gap: 15px;
+}
+
+.project-card {
+	background: #fff;
+	border: 1px solid #e7ebef;
+	border-radius: 10px;
+	padding: 19px;
+	text-align: left;
+	min-height: 178px;
+	transition: .15s;
+	display: flex;
+	flex-direction: column;
+}
+
+.project-card:hover {
+	border-color: #b7cad5;
+	box-shadow: 0 6px 20px #2533410b;
+	transform: translateY(-1px);
+}
+
+.project-card-top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.project-icon {
+	width: 42px;
+	height: 42px;
+	border-radius: 10px;
+	background: #edf3f6;
+	color: #2c6888;
+	display: grid;
+	place-items: center;
+}
+
+.project-card h3 {
+	font: 700 14px Manrope;
+	margin: 15px 0 5px;
+	color: #273541;
+}
+
+.project-card p {
+	font-size: 11px;
+	color: #7c8994;
+	margin: 0;
+	line-height: 1.5;
+}
+
+.project-card-footer {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	border-top: 1px solid #edf0f2;
+	margin-top: auto;
+	padding-top: 14px;
+	color: #788590;
+	font-size: 11px;
+}
+
+.project-card-footer span {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+.card-link {
+	color: #286684;
+	font-weight: 600;
+}
+
+.muted-icon {
+	color: #a3adb6;
+}
+
+/* Таблица задач и статусы. */
+
+.table-wrap {
+	background: #fff;
+	border: 1px solid #e7ebef;
+	border-radius: 9px;
+	overflow: auto;
+}
+
+table {
+	border-collapse: collapse;
+	width: 100%;
+	min-width: 760px;
+}
+
+th {
+	text-align: left;
+	background: #fafbfc;
+	color: #89949e;
+	font-size: 9px;
+	letter-spacing: .8px;
+	font-weight: 700;
+	padding: 13px 15px;
+	border-bottom: 1px solid #e9edf0;
+}
+
+td {
+	padding: 14px 15px;
+	border-bottom: 1px solid #eef1f3;
+	font-size: 11px;
+	color: #65717c;
+}
+
+tr:last-child td {
+	border-bottom: 0;
+}
+
+tbody tr {
+	cursor: pointer;
+}
+
+tbody tr:hover {
+	background: #fafcfd;
+}
+
+td:first-child {
+	min-width: 220px;
+}
+
+.task-name {
+	display: block;
+	color: #2b3946;
+	font-size: 12px;
+	margin-bottom: 4px;
+}
+
+td small {
+	display: block;
+	color: #9aa3ab;
+	font-size: 10px;
+	max-width: 300px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.status {
+	display: inline-flex;
+	padding: 5px 9px;
+	border-radius: 20px;
+	font-size: 10px;
+	font-weight: 600;
+	white-space: nowrap;
+}
+
+.status-new {
+	background: #edf0f3;
+	color: #64717e;
+}
+
+.status-in_progress {
+	background: #e8f1fa;
+	color: #3c6f9a;
+}
+
+.status-review {
+	background: #fff2df;
+	color: #a16d22;
+}
+
+.status-accepted {
+	background: #e7f4ed;
+	color: #3c8661;
+}
+
+.status-rework {
+	background: #fbeaea;
+	color: #a85151;
+}
+
+/* Пустые состояния и переходы между экранами. */
+
+.empty {
+	padding: 38px;
+	text-align: center;
+	color: #929da6;
+	font-size: 12px;
+}
+
+.empty.compact {
+	padding: 25px;
+}
+
+.back-link {
+	border: 0;
+	background: none;
+	color: #52748a;
+	font-size: 12px;
+	padding: 0;
+	margin-bottom: 18px;
+}
+
+/* Карточка объекта и карточка задачи. */
+
+.project-banner {
+	background: white;
+	border: 1px solid #e7ebef;
+	border-radius: 10px;
+	padding: 22px;
+	display: flex;
+	align-items: center;
+	gap: 16px;
+	margin-bottom: 30px;
+}
+
+.project-banner h2 {
+	font: 700 18px Manrope;
+	margin: 4px 0;
+}
+
+.project-banner p {
+	font-size: 12px;
+	color: #7b8791;
+	margin: 0;
+}
+
+.push {
+	margin-left: auto;
+}
+
+.inline-actions {
+	display: flex;
+	gap: 8px;
+}
+
+.detail-grid {
+	display: grid;
+	grid-template-columns: minmax(0, 1.6fr) minmax(280px, 1fr);
+	gap: 17px;
+}
+
+.panel {
+	background: #fff;
+	border: 1px solid #e7ebef;
+	border-radius: 10px;
+	padding: 23px;
+}
+
+.panel-heading {
+	display: flex;
+	justify-content: space-between;
+	gap: 15px;
+	align-items: flex-start;
+}
+
+.panel-heading h2 {
+	font: 700 19px Manrope;
+	margin: 10px 0 0;
+}
+
+.description {
+	font-size: 12px;
+	color: #687581;
+	line-height: 1.7;
+	margin: 18px 0 23px;
+	white-space: pre-wrap;
+}
+
+.meta-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 18px;
+	padding: 19px 0;
+	border-top: 1px solid #edf0f2;
+	border-bottom: 1px solid #edf0f2;
+}
+
+.meta-item span {
+	display: block;
+	color: #909aa3;
+	font-size: 10px;
+	margin-bottom: 6px;
+}
+
+.meta-item strong {
+	font-size: 12px;
+	color: #394754;
+}
+
+/* Действия по задаче и история статусов. */
+
+.action-area {
+	padding-top: 20px;
+	display: flex;
+	align-items: flex-start;
+	gap: 9px;
+	flex-wrap: wrap;
+}
+
+.action-area h3 {
+	width: 100%;
+	font: 700 13px Manrope;
+	margin: 0 0 3px;
+}
+
+.action-area label {
+	width: 100%;
+	font-size: 11px;
+	color: #6d7984;
+}
+
+.action-area textarea {
+	display: block;
+	width: 100%;
+	margin-top: 7px;
+}
+
+.history-panel h3 {
+	font: 700 16px Manrope;
+	margin: 5px 0 0;
+}
+
+.timeline {
+	margin-top: 25px;
+}
+
+.timeline-item {
+	display: flex;
+	gap: 12px;
+	position: relative;
+	padding-bottom: 24px;
+}
+
+.timeline-item:not(:last-child):before {
+	content: '';
+	position: absolute;
+	left: 5px;
+	top: 12px;
+	bottom: 0;
+	width: 1px;
+	background: #e4e9ed;
+}
+
+.timeline-dot {
+	width: 11px;
+	height: 11px;
+	border: 2px solid #70a2bd;
+	background: #fff;
+	border-radius: 50%;
+	z-index: 1;
+	flex-shrink: 0;
+	margin-top: 2px;
+}
+
+.timeline-item strong {
+	font-size: 11px;
+	color: #3c4b57;
+	display: flex;
+	align-items: center;
+	gap: 4px;
+}
+
+.timeline-item p {
+	font-size: 10px;
+	color: #929da6;
+	margin: 6px 0;
+}
+
+.timeline-item blockquote {
+	margin: 8px 0 0;
+	padding: 8px 10px;
+	background: #f7f9fa;
+	border-left: 2px solid #c7d5de;
+	color: #687581;
+	font-size: 11px;
+}
+
+/* Уведомления, формы и модальные окна. */
+
+.toast {
+	margin: 16px 42px 0;
+	padding: 10px 13px;
+	background: #eaf5ef;
+	color: #327454;
+	border: 1px solid #d6eadf;
+	border-radius: 7px;
+	font-size: 12px;
+	display: flex;
+	justify-content: space-between;
+}
+
+.toast.error, .alert.error {
+	background: #fff0ef;
+	color: #a54842;
+	border-color: #f3d7d4;
+}
+
+.toast button {
+	border: 0;
+	background: none;
+	color: inherit;
+}
+
+.modal-backdrop {
+	position: fixed;
+	inset: 0;
+	background: #14233180;
+	z-index: 5;
+	display: grid;
+	place-items: center;
+	padding: 18px;
+}
+
+.modal {
+	width: min(510px, 100%);
+	background: #fff;
+	border-radius: 12px;
+	padding: 25px;
+	box-shadow: 0 20px 70px #0d1d2a40;
+}
+
+.modal-head {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-start;
+	margin-bottom: 22px;
+}
+
+.modal h2 {
+	font: 700 19px Manrope;
+	margin: 6px 0;
+}
+
+.modal label, .login-card label {
+	display: block;
+	font-size: 11px;
+	font-weight: 600;
+	color: #52606c;
+	margin-bottom: 15px;
+}
+
+.modal input, .modal textarea, .modal select, .login-card input, .action-area textarea {
+	width: 100%;
+	border: 1px solid #dfe5e9;
+	border-radius: 7px;
+	padding: 10px 11px;
+	margin-top: 7px;
+	outline: none;
+	font-size: 12px;
+	color: #293844;
+	background: white;
+}
+
+.modal input:focus, .modal textarea:focus, .modal select:focus, .login-card input:focus {
+	border-color: #76a7c0;
+	box-shadow: 0 0 0 3px #76a7c018;
+}
+
+.modal textarea {
+	resize: vertical;
+}
+
+.modal-actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 22px;
+}
+
+/* Вспомогательные текстовые стили. */
+
+.muted {
+	color: #8a959f;
+	font-size: 12px;
+}
+
+.full {
+	width: 100%;
+	margin-top: 6px;
+}
+
+/* Кликабельная область названия задачи сохраняет доступность таблицы с клавиатуры. */
+
+.table-row-trigger {
+	width: 100%;
+	padding: 0;
+	border: 0;
+	background: transparent;
+	text-align: left;
+	color: inherit;
+}
+
+.table-row-trigger:focus-visible {
+	outline: 2px solid #76a7c0;
+	outline-offset: 3px;
+	border-radius: 3px;
+}
+
+.visually-hidden {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
+}
