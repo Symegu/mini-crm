@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import type { FormEvent } from 'react';
-import { Plus, RefreshCw, Search, ShieldCheck, UserRoundPlus } from 'lucide-react';
+import { Plus, RefreshCw, Search, UserRoundPlus } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import { getErrorMessage } from '../../lib/format';
 import { ROLE_LABELS, type Role } from '../../types';
