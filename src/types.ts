@@ -1,5 +1,5 @@
 /** Роли пользователей, назначаемые администратором через Supabase. */
-export type Role = 'requester' | 'executor';
+export type Role = 'superadmin' | 'requester' | 'executor';
 
 /** Статусы задачи и допустимые значения enum public.task_status в PostgreSQL. */
 export type TaskStatus = 'new' | 'in_progress' | 'review' | 'accepted' | 'rework';
@@ -45,7 +45,7 @@ export interface HistoryItem {
 	actor?: Pick<Profile, 'full_name'> | null;
 }
 
-export type AppView = 'projects' | 'my-tasks';
+export type AppView = 'projects' | 'my-tasks' | 'users';
 export type ModalType = 'project' | 'task' | null;
 
 export const STATUS_LABELS: Record<TaskStatus, string> = {
@@ -57,6 +57,7 @@ export const STATUS_LABELS: Record<TaskStatus, string> = {
 };
 
 export const ROLE_LABELS: Record<Role, string> = {
+	superadmin: 'Суперадминистратор',
 	requester: 'Постановщик',
 	executor: 'Исполнитель',
 };

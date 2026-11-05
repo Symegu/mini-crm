@@ -1,13 +1,15 @@
-import { createClient } from '@supabase/supabase-js';
+import { createClient, type SupabaseClient } from '@supabase/supabase-js';
+import type { Database } from './database.types';
 
 const supabaseUrl = import.meta.env.VITE_SUPABASE_URL;
 const supabasePublishableKey = import.meta.env.VITE_SUPABASE_ANON_KEY;
 
-/** Клиент создаётся только при наличии публичных параметров окружения. */
+export type AppSupabaseClient = SupabaseClient<Database>;
+
 export const isSupabaseConfigured = Boolean(supabaseUrl && supabasePublishableKey);
 
-export const supabase = isSupabaseConfigured
-	? createClient(supabaseUrl!, supabasePublishableKey!, {
+export const supabase: AppSupabaseClient | null = isSupabaseConfigured
+	? createClient<Database>(supabaseUrl!, supabasePublishableKey!, {
 			auth: {
 				persistSession: true,
 				autoRefreshToken: true,
@@ -15,3 +17,13 @@ export const supabase = isSupabaseConfigured
 			},
 		})
 	: null;
+
+export function getSupabaseClient(): AppSupabaseClient {
+	if (!supabase) {
+		throw new Error(
+			'Supabase не настроен. Проверьте VITE_SUPABASE_URL и VITE_SUPABASE_ANON_KEY.',
+		);
+	}
+
+	return supabase;
+}
