@@ -19,7 +19,6 @@ export function SupabaseSetupScreen() {
 					Заполните VITE_SUPABASE_URL и VITE_SUPABASE_ANON_KEY,
 					затем перезапустите dev-сервер.
 				</p>
-				<small>Секретный service_role key во фронтенде не используется.</small>
 			</div>
 		</main>
 	);

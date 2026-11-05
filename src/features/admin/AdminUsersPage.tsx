@@ -167,7 +167,6 @@ export function AdminUsersPage({ currentUserId, onNotice, onError }: AdminUsersP
 						</button>
 					</div>
 				</form>
-				<p className="admin-security-note"><ShieldCheck size={15} /> Создание выполняется на сервере. Секретный ключ Supabase не передаётся в браузер.</p>
 			</section>
 
 			<section className="admin-list-section">
